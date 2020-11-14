@@ -10,7 +10,6 @@ import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 import org.springframework.web.reactive.function.client.WebClient;
 
 /**
@@ -52,7 +51,7 @@ public class CarService {
      */
     public Car findById(Long id) {
         /**
-         * TODO: Find the car by ID from the `repository` if it exists.
+         * xTODO: Find the car by ID from the `repository` if it exists.
          *   If it does not exist, throw a CarNotFoundException
          *   Remove the below code as part of your implementation.
          */
@@ -64,7 +63,7 @@ public class CarService {
         Car car = carOptional.get();
 
         /**
-         * TODO: Use the Pricing Web client you create in `VehiclesApiApplication`
+         * xTODO: Use the Pricing Web client you create in `VehiclesApiApplication`
          *   to get the price based on the `id` input'
          * TODO: Set the price of the car
          * Note: The car class file uses @transient, meaning you will need to call
@@ -101,6 +100,7 @@ public class CarService {
                     .map(carToBeUpdated -> {
                         carToBeUpdated.setDetails(car.getDetails());
                         carToBeUpdated.setLocation(car.getLocation());
+                        carToBeUpdated.setCondition(car.getCondition());
                         return repository.save(carToBeUpdated);
                     }).orElseThrow(CarNotFoundException::new);
         }
@@ -125,7 +125,7 @@ public class CarService {
         }
 
         /**
-         * TODO: Delete the car from the repository.
+         * xTODO: Delete the car from the repository.
          */
 
 

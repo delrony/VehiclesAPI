@@ -123,11 +123,7 @@ class CarController {
         /**
          * xTODO: Use the Car Service to delete the requested vehicle.
          */
-        try {
-            carService.delete(id);
-            return ResponseEntity.noContent().build();
-        } catch (CarNotFoundException cnf) {
-            return ResponseEntity.notFound().build();
-        }
+        carService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }
